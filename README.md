@@ -1,6 +1,6 @@
 [Air Quality Index](http://airqualityprediction.pythonanywhere.com/)
 This project is an end to end data science project that is able to predict the chances of getting a disease in organs like liver, kidey, heart, etc.<br><br>
-![plot](Health_app_pic.png)
+![plot](mainimage.png)
 
 # Dataset Used
  [Diabetes](https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india): Air Quality Data in India (2015 - 2020)
