@@ -1,21 +1,20 @@
-[Health App](http://shahabafridy.pythonanywhere.com/)
+[Air Quality Index](http://airqualityprediction.pythonanywhere.com/)
 This project is an end to end data science project that is able to predict the chances of getting a disease in organs like liver, kidey, heart, etc.<br><br>
 ![plot](Health_app_pic.png)
 
 # Dataset Used
-1. [Diabetes](https://www.kaggle.com/uciml/pima-indians-diabetes-database): Pima Indian Diabetes Dataset
-2. [Liver](https://www.kaggle.com/uciml/indian-liver-patient-records): Indian Patient Liver Records
-3. [Heart](https://www.kaggle.com/ronitf/heart-disease-uci): Heart Disease Dataset
-4. [Kidney](https://www.kaggle.com/mansoordaku/ckdisease): Chronic Kidney Disease Dataset
+ [Diabetes](https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india): Air Quality Data in India (2015 - 2020)
+
 
 # Libraries Used:
  1. Django
  2. Sci-kit Learn
- 3. Joblib
- 4. Pandas
- 5. Numpy
- 6. Bootstrap
- 7. HTML & CSS
+ 3. xgboost
+ 4. Joblib
+ 5. Pandas
+ 6. Numpy
+ 7. Bootstrap
+ 8. HTML & CSS
  
  This whole Project is Deployed over <u>pythonanywhere.com Python</u>
  
