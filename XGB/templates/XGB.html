@@ -1,0 +1,102 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% comment %} <link rel="icon" href="../static/img/health.ico"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'img/health.ico' %}">
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> {% endcomment %}
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    font-family: 'Josefin Sans', sans-serif;
+    }
+    html,
+    body,
+    header,
+    #intro {
+    height: 100%;
+    }
+    img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    }
+    </style>
+    <title>Diabetes Prediction</title>
+  </head>
+  <body>
+    <header data-bs-theme="dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid align-items-center">
+          <a class="navbar-brand" href="{% url 'home' %}">Air Quality Index</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'MLR_Model' %}">MLR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'SVR_Model' %}">SVR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'RFR_Model' %}">RFR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'XGB_Model' %}">XGB</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Graphs' %}">Graph</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'About' %}">About</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!--Mask-->
+      <div id="intro" class="container-fluid view">
+        <hr class="featurette-divider">
+        {% comment %} <h1 class="text-center text-capitalize pt-5">Mulitple Linear Regression Forecasting</h1> {% endcomment %}
+        <hr class="w-75 mx-auto pt-2">
+        <div class="row mb-5">
+          <div class="col-lg-5 col-md-5 col-11 my-auto offset-1">
+            <img src="../static/img/xgboost.jpg" class="float-left">
+
+          </div>
+          <div class="col-lg-4 col-md-4 col-12">
+            <hr class="w-75 mx-auto pt-4">
+              <form action="" method="POST">
+              <div class="form-group">
+                {% csrf_token %}
+                {{ XGB_form.as_p }}
+              </div>
+              <button type="submit" class="btn btn-danger">Predict</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--/.Mask-->
+    </header>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

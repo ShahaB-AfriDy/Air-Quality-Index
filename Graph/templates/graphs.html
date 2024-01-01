@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Project Title</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Your custom CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div class="container-fluid align-items-center">
+            <a class="navbar-brand" href="{% url 'home' %}">Air Quality Index</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{% url 'MLR_Model' %}">MLR</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'SVR_Model' %}">SVR</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'RFR_Model' %}">RFR</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'XGB_Model' %}">XGB</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'Graphs' %}">Graph</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'About' %}">About</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+
+<div class="container mt-5">
+    <hr class="w-75 mx-auto pt-2">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Bar Graph</h2>
+      <div id="barGraph" class="chart-container">
+        <img src="{% static 'img/Bar.png' %}" alt="Bar Graph Image" class="img-fluid">
+        {% comment %} <img src="../static/img/Bar.png" class="img-fluid"> {% endcomment %}
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2>Pie Chart</h2>
+      <div id="pieChart" class="chart-container">
+        <img src="{% static 'img/Pie.png' %}" alt="Pie Chart Image" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <hr class="w-75 mx-auto pt-4">
+    <div class="col-md-6">
+      <h2>Correlation</h2>
+      <div id="barGraph" class="chart-container">
+        <img src="{% static 'img/Correlation.png' %}" alt="Bar Graph Image" class="img-fluid">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2>Boxplot</h2>
+      <div id="pieChart" class="chart-container">
+        <img src="{% static 'img/Boxplot.png' %}" alt="Pie Chart Image" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="row">
+    <hr class="w-75 mx-auto pt-4">
+    <div class="col-md-6">
+        <h2>Air Pollution Data</h2>
+        <p>Air Quality Data in India (2015 - 2020)
+            Air Quality Index (AQI) and hourly data across stations and cities in India
+            </p>
+        <p><a href="https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india" target="_blank">Dataset link</a></p>
+    </div>
+
+    <div class="col-md-6">
+        <h2>Research Paper</h2>
+        <p>Prediction of Air Quality Index Using Supervised Machine Learning Algorithms
+            Publisher: IEEE Karlapudi Saikiran; Gottapu Lithesh; Birru Srinivas; S Ashok
+        </p>
+        <p><a href="https://ieeexplore.ieee.org/document/9563323" target="_blank">Paper link</a></p>
+    </div>
+  </div>
+
+
+{% comment %} 
+  <div class="row mt-5">
+    <hr class="w-75 mx-auto pt-2">
+    <div class="col-md-12">
+      <h2>Model Evaluation</h2>
+      <!-- Add your model evaluation content here -->
+    </div>
+  </div> {% endcomment %}
+
+
+  <div class="row">
+    <hr class="w-75 mx-auto pt-4">
+    <div class="col-md-6">
+      <h2>Paper Model</h2>
+        <img src="{% static 'img/Paper_Models.jpeg' %}" alt="Pie Chart Image" class="img-fluid">
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-6">
+        <h2>Model Evaluation</h2>
+        <img src="{% static 'img/Models_E.png' %}" alt="Pie Chart Image" class="img-fluid">
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+  <div class="row mt-5">
+    <hr class="w-75 mx-auto pt-2">
+    <div class="col-md-12">
+      <h2>Project Code</h2>
+      <p><a href="https://github.com/Show-Me-the-Code/python" target="_blank">Github link</a></p>
+    </div>
+  </div>
+
+
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Your custom JS file -->
+<script src="scripts.js"></script>
+
+</body>
+</html>
